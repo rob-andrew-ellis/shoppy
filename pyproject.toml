@@ -1,0 +1,17 @@
+[project]
+name = "shoppy"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "rob-andrew-ellis", email = "robandrewellis@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+shoppy = "shoppy:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
