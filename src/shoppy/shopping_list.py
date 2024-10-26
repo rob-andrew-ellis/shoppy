@@ -14,8 +14,8 @@ def get_list(list_path: Path = Path("data/list.txt")) -> list[str]:
         A list of Strings representing the shopping list
     """
     if list_path.is_file():
-        with open(list_path) as f:
-            return [line.rstrip("\n") for line in f]
+        with open(list_path) as file:
+            return [line.rstrip("\n") for line in file]
     else:
         return []
 
@@ -36,3 +36,13 @@ def add_item(my_list: list[str], item: str) -> list[str]:
         print(f"{item} is already on the list, silly.")
 
     return my_list
+
+
+def save_list(my_list: list[str], list_path: Path):
+    """Saves the list to file
+
+    Args:
+        my_list: The current shopping list
+    """
+    with open(list_path, "w") as file:
+        [file.write(item + "\n") for item in my_list]
